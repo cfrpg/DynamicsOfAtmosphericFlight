@@ -14,3 +14,5 @@ CTeX 2.9.2
 如有bug,自行修复
 
 模板基于[polossk](https://github.com/polossk)  [用过都说好模板](https://github.com/polossk/LaTeX-Template-For-NPU-Thesis)
+
+如有帮助,点个star呗0v0
