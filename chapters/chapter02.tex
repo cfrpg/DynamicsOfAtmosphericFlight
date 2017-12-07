@@ -1,0 +1,48 @@
+\chapter{静操纵性和稳定性}
+
+\section{纵向}
+俯仰刚度:受扰动后产生恢复力矩($=-\Cma$)
+
+稳定俯仰配平:$\Cmz >0 ,\Cma<0$
+
+\subsection{俯仰力矩系数}
+[图]
+\subsubsection{机翼}
+$$C_{m,w}=C_{m,\mathrm{mac,w}}+C_{L_\alpha,w} \alpha_w(h-h_n)$$
+
+\subsubsection{机身}
+通常考查翼身组合体
+$$C_{m,wb}=M_{\mathrm{mac,wb}}+C_{L_\alpha,wb} \alpha_wb(h-h_nwb)$$
+
+\subsubsection{平尾}
+$$C_{m,t}=-C_{L,t}\frac{q_t}{q}\frac{S_tl_t}{S\bar{c}}=-C_{L,t}\bar{V_t}\eta_t=-C_{L_{\alpha},t}(\alpha_w-i_w+i_t-\eps)\bar{V_t}\eta_t$$
+
+尾容量:$\displaystyle\bar{V_t}=\frac{S_tl_t}{S\bar{c}}$
+
+动压比:$\displaystyle\eta_t=\frac{q_t}{q}$
+
+下洗角:$\eps$
+
+$$\frac{\diff C_{m,t}}{\diff \CL}=-\frac{C_{L_\alpha,t}}{C_{L_\alpha,w}}\left(1-\frac{\diff \eps}{\diff \alpha}\right)\eta\bar{V_t}$$
+
+\nl
+总俯仰力矩系数:
+$$\Cm=(\bar{x}_{cg}-\bar{x}_{ac})C_{L,w}+C_{m,\mathrm{mac,w}}+C_{m,f}-C_{L,t}\eta_t,\bar{V_t}$$
+
+$$\Cmcl=(\bar{x}_{cg}-\bar{x}_{ac})+(\Cmcl)_f-\frac{C_{L_\alpha,t}}{C_{L_\alpha,w}}\left(1-\frac{\diff \eps}{\diff \alpha}\right)\eta\bar{V_t}$$
+
+\subsection{握杆中性点}
+使$\Cmcl=0$的$\bar{x}_{cg}$
+$$N_0=\bar{x}_{ac}-(\Cmcl)_f+\frac{C_{L_\alpha,t}}{C_{L_\alpha,w}}\left(1-\frac{\diff \eps}{\diff \alpha}\right)\eta\bar{V_t}$$
+
+中性点是整机的气动中心,迎角变化引起的升力增量作用于中性点.
+
+稳定裕度:重心距离中性点的距离
+$$H_n=N_0-\bar{x}_{cg}$$
+
+\subsection{纵向操纵}
+升降舵偏转不影响握杆静稳定性.
+
+
+
+\endinput
