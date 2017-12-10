@@ -29,6 +29,8 @@ $$\frac{\diff C_{m,t}}{\diff \CL}=-\frac{C_{L_\alpha,t}}{C_{L_\alpha,w}}\left(1-
 总俯仰力矩系数:
 $$\Cm=(\bar{x}_{cg}-\bar{x}_{ac})C_{L,w}+C_{m,\mathrm{mac,w}}+C_{m,f}-C_{L,t}\eta_t,\bar{V_t}$$
 
+$$\Cmz=C_{m,\mathrm{mac,w}}+C_{mf0}-a_t\bar{V}_1\eta_t(\alpha_{0,w}-i_w+i_t)$$
+
 $$\Cmcl=(\bar{x}_{cg}-\bar{x}_{ac})+(\Cmcl)_f-\frac{C_{L_\alpha,t}}{C_{L_\alpha,w}}\left(1-\frac{\diff \eps}{\diff \alpha}\right)\eta\bar{V_t}$$
 
 \subsection{握杆中性点}
@@ -43,6 +45,86 @@ $$H_n=N_0-\bar{x}_{cg}$$
 \subsection{纵向操纵}
 升降舵偏转不影响握杆静稳定性.
 
+升降舵效率
+$$\Cmde=-a_t\bar{V}_1\eta_t\tau$$
 
+配平升力时的升降舵偏角
+$$\delta_{e,0}=\frac{C_{\mathrm{mac,w}}+C_{m,\mathrm{f,0}}-a_t(\alpha_{0,w}-i_w+i_t)\bar{V}_1\eta_t}{-\Cmde}$$
+
+重心前限:重心前移使$\delta_e - \CL$曲线变陡,最大升力系数时仍能利用升降舵配平
+$$x_{cg,f}=N_0-(\delta_{e,max}-\delta_{e,0})\frac{\Cmde}{C_{L,\mathrm{max}}}$$
+
+\subsection{铰链力矩}
+松杆$\Cm - \CL$曲线斜率
+$$\left(\frac{\diff \Cm}{\diff \CL}\right)_{\mathrm{free}}=\left(\frac{\diff \Cm}{\diff \CL}\right)_{\mathrm{fix}}-\frac{\Cmde}{a_w}\frac{C_{h\alpha}}{C_{h\delta_e}}\left(1-\frac{\diff \eps}{\diff \alpha}\right)$$
+
+松杆中性点(通常在焦点之前):
+$$N_0'=\bar{x}_{cg}-\left(\frac{\diff \Cm}{\diff \CL}\right)_{\mathrm{free}}=\bar{x}_{ac,w}-\left(\frac{\diff \Cm}{\diff \CL}\right)_f+\frac{a_t}{a_w}\bar{V}_1 \eta_t\left(1-\frac{\diff \eps}{\diff \alpha}\right)\left(1-\tau\frac{C_{h\alpha}}{C_{h\delta_e}}\right)$$
+
+\subsection{杆力}
+$$F_s=K'V^2(K_2+C_{h\delta t}\delta_t)+K''$$
+$$K'=\frac{1}{2}\rho K_1\ \ ,\ \ K''=-K_1 \frac{C_{h\delta e}}{\Cmde}\frac{W}{S}\left(\frac{\diff \Cm}{\diff\CL}\right)_{\mathrm{free}}$$
+
+$$K_1=-G_1S_e\bar{c}_e\eta_t\ \ ,\ \ K_2=C_{h0}+C_{h\alpha}(\alpha_{0,w}-i_w+i_t)+C_{h\delta_e}\delta_{e,0}$$
+
+$$\frac{\diff F_s}{\diff V}=2K'(K_2+C_{h\delta t}\delta_t)$$
+
+对于稳定的飞机,$\displaystyle \frac{\diff F_s}{\diff V}>0$
+调整片偏角
+$$\delta_{t,trim}=-\frac{1}{C_{h\delta_t}}\left(\frac{K''}{K'V^2_{trim}}+K_2\right)$$
+
+\subsection{机动飞行稳定性}
+
+
+\subsection{重心前后限}
+\subsubsection{重心后限}
+\begin{enumerate}[label=\arabic*.,topsep=0pt]
+\setlength{\itemsep}{-2pt}
+\item 握杆中性点:静稳定性,平衡舵偏角.
+$$N_0=\bar{x}_{ac}-(\Cmcl)_f+\frac{C_{L_\alpha,t}}{C_{L_\alpha,w}}\left(1-\frac{\diff \eps}{\diff \alpha}\right)\eta\bar{V_t}=\bar{x}_{cg}-\Cmcl$$
+\item 松杆中性点:
+$$N_0'=\bar{x}_{ac,w}-\left(\frac{\diff \Cm}{\diff \CL}\right)_f+\frac{a_t}{a_w}\bar{V}_1 \eta_t\left(1-\frac{\diff \eps}{\diff \alpha}\right)\left(1-\tau\frac{C_{h\alpha}}{C_{h\delta_e}}\right)$$
+
+\end{enumerate}
+
+\subsubsection{重心前限}
+
+\section{航向}
+侧滑角:$\displaystyle\sin \beta=\frac{v}{V}$
+\subsection{稳定性}
+航向稳定性导数:$\Cnb>0$
+
+部件影响:
+\begin{enumerate}[label=\arabic*.,topsep=0pt]
+\setlength{\itemsep}{-2pt}
+\item 机翼:上反增加稳定性,后掠增加稳定性
+\item 机身:通常不稳定
+$$C_{n\beta,wb}=-K_NK_{RI}\frac{S_{B,S}}{S}\frac{l_f}{b}$$
+\item 垂尾:增加稳定性
+$$C_{n\beta,v}=k a_v\left(1+\frac{\partial \theta}{\partial \beta}\right)\eta_v \bar{V}_2\ \ ,\ \ \bar{V}_2=\frac{S_vl_v}{Sb}$$
+\end{enumerate}
+
+\subsection{操纵}
+$$\Cndr=-k\eta_v\bar{V}_2a_v\tau_2$$
+
+$$\delta_r=-\frac{\Cnb \beta}{\Cndr}$$
+
+\subsection{操纵力}
+$$F_p=G_2q\eta_vS_r\bar{c}_r(C_{h\beta}\beta+C_{h\delta_r}\delta_r+C_{h\delta_t}\delta_t)$$
+$$\frac{\partial F_p}{\beta}=G_2q\eta_vS_r\bar{c}_r\left( C_{h\beta}-\frac{C_{h\delta_r}}{\Cndr}\Cnb\right)$$
+
+\section{横向}
+\subsection{稳定性}
+航向稳定性导数:$\Clb<0$
+
+部件影响
+\begin{enumerate}[label=\arabic*.,topsep=0pt]
+\setlength{\itemsep}{-2pt}
+\item 忽略机身直接影响
+\item 上单翼增加稳定性,下单翼降低稳定性
+\item 后掠增加稳定性
+\item 垂尾通常增加稳定性
+
+\end{enumerate}
 
 \endinput
