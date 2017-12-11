@@ -60,7 +60,7 @@ $$\left(\frac{\diff \Cm}{\diff \CL}\right)_{\mathrm{free}}=\left(\frac{\diff \Cm
 
 松杆中性点(通常在焦点之前):
 $$N_0'=\bar{x}_{cg}-\left(\frac{\diff \Cm}{\diff \CL}\right)_{\mathrm{free}}=\bar{x}_{ac,w}-\left(\frac{\diff \Cm}{\diff \CL}\right)_f+\frac{a_t}{a_w}\bar{V}_1 \eta_t\left(1-\frac{\diff \eps}{\diff \alpha}\right)\left(1-\tau\frac{C_{h\alpha}}{C_{h\delta_e}}\right)$$
-
+\clearpage
 \subsection{杆力}
 $$F_s=K'V^2(K_2+C_{h\delta t}\delta_t)+K''$$
 $$K'=\frac{1}{2}\rho K_1\ \ ,\ \ K''=-K_1 \frac{C_{h\delta e}}{\Cmde}\frac{W}{S}\left(\frac{\diff \Cm}{\diff\CL}\right)_{\mathrm{free}}$$
@@ -74,7 +74,24 @@ $$\frac{\diff F_s}{\diff V}=2K'(K_2+C_{h\delta t}\delta_t)$$
 $$\delta_{t,trim}=-\frac{1}{C_{h\delta_t}}\left(\frac{K''}{K'V^2_{trim}}+K_2\right)$$
 
 \subsection{机动飞行稳定性}
+握杆机动点:
+$$M_0=h_n-\frac{\Cmq}{2\mu-\CLq}\Rightarrow h_n-\frac{\Cmq}{2\mu}$$
+其中$\displaystyle \mu=\frac{W}{\rho g S l_t}$
 
+单位过载舵偏角:
+$$\frac{\delta_e}{n-1}=-\frac{C_W\CLa(2\mu-\CLq)}{2\mu\mathrm{det}}(h-M_0)$$
+其中$\mathrm{det}=\CLa\Cmde-\CLde\Cma$
+
+松杆机动点:
+$$M'_0=M_0+\frac{\mathrm{det}}{a'b_2}\left( \frac{C_{h\alpha}}{\CLa}+\frac{C_{hq}}{2\mu-\CLq}\right)$$
+
+单位过载操纵力:
+$$
+\begin{aligned}
+\frac{\diff F_s}{\diff n}&=G_1 \frac{W}{S}\eta_tS_e\bar{c}_e\frac{a'b_2}{2\mu \mathrm{det}}(2\mu-\CLq)(\bar{x}_{cg}-M'_0)\\
+&=G_1 \frac{W}{S}\eta_tS_e\bar{c}_e\frac{C_{h\delta_e}}{\Cmde}(\bar{x}_cg-N'_m)
+\end{aligned}
+$$
 
 \subsection{重心前后限}
 \subsubsection{重心后限}
@@ -84,11 +101,22 @@ $$\delta_{t,trim}=-\frac{1}{C_{h\delta_t}}\left(\frac{K''}{K'V^2_{trim}}+K_2\rig
 $$N_0=\bar{x}_{ac}-(\Cmcl)_f+\frac{C_{L_\alpha,t}}{C_{L_\alpha,w}}\left(1-\frac{\diff \eps}{\diff \alpha}\right)\eta\bar{V_t}=\bar{x}_{cg}-\Cmcl$$
 \item 松杆中性点:
 $$N_0'=\bar{x}_{ac,w}-\left(\frac{\diff \Cm}{\diff \CL}\right)_f+\frac{a_t}{a_w}\bar{V}_1 \eta_t\left(1-\frac{\diff \eps}{\diff \alpha}\right)\left(1-\tau\frac{C_{h\alpha}}{C_{h\delta_e}}\right)$$
+\item 握杆机动点:
+$$N_m=M_0=\bar{x}_{ac}-\left( \frac{\diff \Cm}{\diff \CL}\right)_f+\frac{a_t\bar{V_1}\eta_t}{a_w}\left[\left(1-\frac{\diff \eps}{\diff \alpha}\right)+\frac{a_w}{2\mu}\right]$$
+\item 松杆机动点:
+$$N'_m=M'_0=\bar{x}_{ac}-\left( \frac{\diff \Cm}{\diff \CL}\right)_f+\frac{a_t\bar{V_1}\eta_t}{a_w}\left[\left(1-\frac{\diff \eps}{\diff \alpha}\right)+\frac{a_w}{2\mu}\right]\left(1-\tau \frac{C_{h\alpha}}{C_{h\delta_e}}\right)$$
 
 \end{enumerate}
 
 \subsubsection{重心前限}
-
+\begin{enumerate}[label=\arabic*.,topsep=0pt]
+\setlength{\itemsep}{-2pt}
+\item 起降时升降舵能平衡俯仰力矩而不超过偏角限制.
+\item 地面效应或增加机翼和平尾升力曲线斜率,减小下洗角,重心前限后移
+\item 增升装置使$\Cm-\alpha$曲线上移,增加下洗角
+\item $\diff F_s/\diff n$限制
+\item $\diff F_s/\diff \delta_e$限制
+\end{enumerate}
 \section{航向}
 侧滑角:$\displaystyle\sin \beta=\frac{v}{V}$
 \subsection{稳定性}
